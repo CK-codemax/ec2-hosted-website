@@ -244,6 +244,25 @@ To destroy all resources created by Terraform:
 terraform destroy
 ```
 
+### Deleting the Key Pair
+
+When you're done with the project, you can delete the key pair from AWS:
+
+```sh
+aws ec2 delete-key-pair --key-name my-ec2-hosted-website
+```
+
+Replace `my-ec2-hosted-website` with the actual name of your key pair.
+
+**Note:** This only deletes the key pair from AWS. Your local private key file will still exist on your machine. If you want to delete that as well, you can run:
+
+```sh
+rm my-ec2-hosted-website
+rm my-ec2-hosted-website.pub
+```
+
+**Important:** Make sure you no longer need SSH access to any EC2 instances before deleting the key pair, as you won't be able to SSH into instances that were launched with this key pair.
+
 ---
 
 ## Troubleshooting
