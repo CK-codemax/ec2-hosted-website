@@ -1,0 +1,10 @@
+# Ignore everything
+/*
+
+# Except Terraform configuration files
+!main.tf
+!variables.tf
+!sg.tf
+!provider.tf
+!outputs.tf 
+!.gitignore
